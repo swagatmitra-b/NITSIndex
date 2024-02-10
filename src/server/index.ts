@@ -60,7 +60,7 @@ export const appRouter = router({
         })
       );
       return [categories, subCategories];
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
     }
   }),
@@ -68,7 +68,7 @@ export const appRouter = router({
     try {
       const categories = await prisma.category.findMany();
       return categories;
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
     }
   }),
