@@ -39,12 +39,16 @@ export const appRouter = router({
       }
     }),
   getTime: publicProcedure.query(async () => {
-    const time = await prisma.votingTime.findUnique({
-      where: {
-        id: 1,
-      },
-    });
-    return time;
+    try {
+      const time = await prisma.votingTime.findUnique({
+        where: {
+          id: 1,
+        },
+      });
+      return time;
+    } catch (error: any) {
+      console.log(error.message);
+    }
   }),
   getAll: publicProcedure.query(async () => {
     try {
