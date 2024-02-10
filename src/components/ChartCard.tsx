@@ -1,5 +1,6 @@
-import React from "react";
-import { roboto700 } from "@/app/home/page";
+import { Roboto } from "next/font/google";
+
+const roboto700 = Roboto({ subsets: ["latin"], weight: ["900"] });
 
 const ChartCard = ({
   name,
