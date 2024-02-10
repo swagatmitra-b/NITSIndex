@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id Int @id @default(autoincrement())
+  email String @unique
+  name String
+  branch String
+  scholarId Int @unique
+  password String
+  votedSubCategories SubCategory[]
+}
+
+model Category {
+  id Int @id @default(autoincrement())
+  name String @unique
+  subCategories SubCategory[]
+}
+
+model SubCategory {
+   id Int @id @default(autoincrement())
+   name String
+   categoryId Int 
+   category Category @relation(fields: [categoryId], references: [id])
+   votedBy Student[]
+   items Item[]
+   sentences Sentence[]
+}
+
+model Item {
+  id Int @id @default(autoincrement())
+  name String
+  subCategoryId Int
+  subCategory SubCategory @relation(fields: [subCategoryId], references: [id])
+  votes Int @default(0)
+  pic String?
+}
+
+model Sentence {
+  id Int @id @default(autoincrement())
+  content String
+  subCategoryId Int
+  subCategory SubCategory @relation(fields: [subCategoryId], references: [id])
+}
+
+model VotingTime {
+  id Int @id @default(autoincrement())
+  time DateTime
+}
+
+model Team {
+  id Int @id @default(autoincrement())
+  name String
+  github String
+  email String
+}
+
+model Suggestion {
+  id Int @id @default(autoincrement())
+  suggestion String
+  category String
+  subCategory String
+  usermail String
+}
+
+model Application {
+  id Int @id @default(autoincrement()) 
+  name String
+  email String
+  scholarId Int
+  reason String
+}
+
+model Feedback {
+  id Int @id @default(autoincrement()) 
+  feedBack String
+  email String
+}
