@@ -3,7 +3,9 @@ import Link from "next/link";
 import { trpc } from "@/trpc_client/client";
 import { type subCategoryCardProps } from "@/lib/utils";
 import { useState } from "react";
-import { roboto700 } from "@/app/home/page";
+import { Roboto } from "next/font/google";
+
+const roboto700 = Roboto({ subsets: ["latin"], weight: ["900"] });
 
 const SubCategoryCard = ({
   subCategoryId,

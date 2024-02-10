@@ -4,10 +4,6 @@ import CountDown from "react-countdown";
 import VoteDialog from "@/components/VoteDialog";
 import { trpc } from "@/trpc_client/client";
 import { useEffect, useState } from "react";
-import { Roboto } from "next/font/google";
-import { Textarea } from "@/components/ui/textarea";
-
-export const roboto700 = Roboto({ subsets: ["latin"], weight: ["900"] });
 
 const page = () => {
   const { data: session } = useSession();
