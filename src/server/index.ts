@@ -1,4 +1,4 @@
-import { procedure as publicProcedure, router } from "./trpc";
+import { procedure as publicProcedure, router } from "@/server/trpc";
 import {
   rawSchema,
   subCategoryInput,
