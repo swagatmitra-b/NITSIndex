@@ -47,34 +47,26 @@ export const appRouter = router({
       });
       return time;
     } catch (error: any) {
-      console.log(error.message);
+      throw new Error(error.message);
     }
   }),
   getAll: publicProcedure.query(async () => {
-    try {
-      const categories = await prisma.category.findMany();
-      const subCategories = await Promise.all(
-        categories.map(async (category) => {
-          const subCat = await prisma.subCategory.findMany({
-            where: {
-              categoryId: category.id,
-            },
-          });
-          return subCat;
-        })
-      );
-      return [categories, subCategories];
-    } catch (error: any) {
-      console.log(error.message);
-    }
+    const categories = await prisma.category.findMany();
+    const subCategories = await Promise.all(
+      categories.map(async (category) => {
+        const subCat = await prisma.subCategory.findMany({
+          where: {
+            categoryId: category.id,
+          },
+        });
+        return subCat;
+      })
+    );
+    return [categories, subCategories];
   }),
   getCategories: publicProcedure.query(async () => {
-    try {
-      const categories = await prisma.category.findMany();
-      return categories;
-    } catch (error: any) {
-      console.log(error.message);
-    }
+    const categories = await prisma.category.findMany();
+    return categories;
   }),
   getSubCategories: publicProcedure
     .input(subCategoryInput)
