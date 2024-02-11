@@ -40,23 +40,23 @@ const TheWhy = () => {
       <AccordionItem value="item-5">
         <AccordionTrigger>Can I contribute?</AccordionTrigger>
         <AccordionContent>
-          YES! Your votes, feedback and suggestions are all
-          crucial for the functioning of this database. We encourage you to vote
-          regularly and share us your ideas across various categories. To keep
-          us abreast with the latest trends in campus, you can send us your
-          entries for the categories you're interested in for up to 24 hours
-          before the voting begins. This database is for you and is nothing
-          without you. For joining the maintenance team, please login to your
-          account and send us an application!
+          YES! Your votes, feedback and suggestions are all crucial for the
+          functioning of this database. We encourage you to vote regularly and
+          share us your ideas across various categories. To keep us abreast with
+          the latest trends in campus, you can send us your entries for the
+          categories you're interested in for up to 24 hours before the voting
+          begins. This database is for you and is nothing without you. To join
+          the maintenance team, please login to your account and send us an
+          application!
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-6">
         <AccordionTrigger>What if this never works out?</AccordionTrigger>
         <AccordionContent>
-          And it probably won't, at some point. Maintaining a database as it scales
-          is a very tedious task, even with a sizeable team. This is bound to
-          lose traction and fail, like a lot of things that you wish didn't. But
-          we're here for it while it lasts :)
+          And it probably won't, at some point. Maintaining a database as it
+          scales is a very tedious task, even with a sizeable team. This is
+          bound to lose traction and fail, like a lot of things that you wish
+          didn't. But we're here for it while it lasts :)
         </AccordionContent>
       </AccordionItem>
     </Accordion>

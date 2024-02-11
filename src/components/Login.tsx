@@ -13,22 +13,24 @@ import {
   Button,
 } from "@/components/ui/chadExporter";
 
-import {} from "next-auth";
 import { loginFormSchema, type loginFormType } from "@/lib/zodSchema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = useForm<loginFormType>({
     resolver: zodResolver(loginFormSchema),
   });
   const router = useRouter();
+  const { data: session } = useSession();
 
   const loginUser = async (data: loginFormType) => {
     const res = await signIn("credentials", {
@@ -36,7 +38,14 @@ const Login = () => {
       redirect: false,
     });
     if (res?.ok) router.push("/home");
+    else {
+      setError(res?.error as string);
+    }
   };
+
+  useEffect(() => {
+    if (session?.user) router.push("/home");
+  }, []);
   return (
     <form onSubmit={handleSubmit(loginUser)}>
       <Card className="w-[350px] border border-black relative">
@@ -59,6 +68,7 @@ const Login = () => {
               />
             </div>
           </div>
+          {error && <h1 className="text-sm mt-2 text-red-500">{error}</h1>}
         </CardContent>
         <CardFooter className="flex justify-between">
           <Link href="/signup">

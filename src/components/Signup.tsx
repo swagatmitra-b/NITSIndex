@@ -86,7 +86,11 @@ const Signup = () => {
               User account created!
             </h1>
           )}
-          {submitMutation.error?.message}
+          {submitMutation.error?.message ? (
+            <h1 className="text-red-500 text-sm mt-2">
+              This email or scholar ID is already registered.
+            </h1>
+          ) : null}
         </CardContent>
         <CardFooter className="flex justify-between">
           <Link href="/login">

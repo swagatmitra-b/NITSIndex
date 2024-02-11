@@ -20,7 +20,7 @@ const TeamDialog = () => {
         <ul className="list-disc p-5">
           {team.isSuccess ? (
             team.data.map((member) => (
-              <li className="">
+              <li key={member.id}>
                 <a href={member.github} target="_blank" className=" underline">
                   {member.name}
                 </a>

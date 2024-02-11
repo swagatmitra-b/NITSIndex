@@ -38,20 +38,20 @@ const gateKeeper = async (
   password: string,
   unique: string | number,
   field: string | number
-): Promise<{ id: string; name: string, email: string } | null> => {
+): Promise<{ id: string; name: string; email: string } | null> => {
   let student;
   if (field === "email") {
     student = await prisma.student.findUnique({
       where: {
-        email: unique as string
-      }
-    })
+        email: unique as string,
+      },
+    });
   } else {
     student = await prisma.student.findUnique({
       where: {
-        scholarId: unique as number
-      }
-    })
+        scholarId: unique as number,
+      },
+    });
   }
   if (student) {
     const isReal = await bcrypt.compare(password, student.password);
@@ -59,10 +59,11 @@ const gateKeeper = async (
       return {
         id: "",
         name: student.name,
-        email: student.email
+        email: student.email,
       };
-  }
-  return null;
+    else throw new Error("Incorrect Credentials");
+  } else
+    throw new Error("No such account exists in the database. Please sign up.");
 };
 
 const handler = NextAuth(authOptions);
