@@ -11,7 +11,7 @@ export default function Provider({ children }: { children: ReactNode }) {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: "http://nitsindex.vercel.app/api/trpc",
+          url: "/api/trpc",
         }),
       ],
     })
