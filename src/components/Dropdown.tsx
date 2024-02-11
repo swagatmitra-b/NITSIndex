@@ -1,12 +1,11 @@
 "use client";
-import { LifeBuoy, LogOut, Settings, Users } from "lucide-react";
+import { GitPullRequestArrow, LogOut, Settings, Users } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -24,16 +23,16 @@ const Dropdown = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 mr-14">
-        <DropdownMenuGroup>
           <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
             <Users className="mr-2 h-4 w-4" />
             <TeamDialog />
           </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuItem>
-          <LifeBuoy className="mr-2 h-4 w-4" />
-          <Link href="/home/contribute">Contribute</Link>
-        </DropdownMenuItem>
+        <Link href="/home/contribute">
+          <DropdownMenuItem>
+            <GitPullRequestArrow className="mr-2 h-4 w-4" />
+            <span>Contribute</span>
+          </DropdownMenuItem>
+        </Link>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
           <LogOut className="mr-2 h-4 w-4" />

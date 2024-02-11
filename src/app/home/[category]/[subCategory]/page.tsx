@@ -33,7 +33,7 @@ const page = ({ params }: { params: { subCategory: string } }) => {
       {itemData.names.length ? (
         <div className="text-center">
           <h1 className="text-5xl font-bold mb-10">
-            {subCategory.split(" ")[0]}
+            {subCategory}
           </h1>
           <div className="flex flex-col md:flex-row gap-5">
             <Chart {...itemData} />

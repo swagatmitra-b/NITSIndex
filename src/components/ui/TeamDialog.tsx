@@ -15,7 +15,7 @@ const TeamDialog = () => {
   const team = trpc.getTeam.useQuery();
   return (
     <Dialog>
-      <DialogTrigger>Team</DialogTrigger>
+      <DialogTrigger className="w-full text-left">Team</DialogTrigger>
       <DialogContent className="">
         <ul className="list-disc p-5">
           {team.isSuccess ? (
