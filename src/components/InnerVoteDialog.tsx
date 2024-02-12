@@ -29,7 +29,7 @@ const InnerVoteDialog = ({
           {subCategory.name}
         </Button>
       </DialogTrigger>
-      <DialogContent className="">
+      <DialogContent className="overflow-y-auto rounded-md">
         <div className="flex items-center space-x-2">
           <div className="flex-col w-full">
             <VoteForm

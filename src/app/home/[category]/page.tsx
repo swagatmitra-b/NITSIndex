@@ -4,6 +4,7 @@ import { trpc } from "@/trpc_client/client";
 import SubCategoryCard from "@/components/SubCategoryCard";
 import { useState, useEffect } from "react";
 import { type subCategoryType, type Item } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const page = ({ params }: { params: { category: string } }) => {
   const [cardData, setCardData] = useState<{
@@ -24,7 +25,9 @@ const page = ({ params }: { params: { category: string } }) => {
   }, [subs.data]);
   return (
     <div className="flex flex-col items-center md:grid grid-cols-3 gap-10 p-20 w-full">
-      {subs.isFetched &&
+      {subs.isLoading ? (
+        <Skeleton />
+      ) : (
         cardData.subCategory.map((subCat, i) => (
           <SubCategoryCard
             {...cardData.facePics[i]}
@@ -33,7 +36,8 @@ const page = ({ params }: { params: { category: string } }) => {
             subCategoryId={subCat.id}
             category={params.category}
           />
-        ))}
+        ))
+      )}
     </div>
   );
 };

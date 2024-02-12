@@ -13,7 +13,7 @@ const ChartCard = ({
 }) => {
   return (
     <div
-      className="rounded-lg relative border border-black text-center h-20 flex items-center justify-center"
+      className="rounded-lg relative border border-black text-center h-20 flex items-center justify-center dark:border-white"
       style={{ width: 500 - multiplier * 20 + "px" }}
     >
       {pic && (
