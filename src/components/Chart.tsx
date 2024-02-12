@@ -1,6 +1,7 @@
 "use client";
 
 import { BarChart } from "@mui/x-charts/BarChart";
+import { useState } from "react";
 
 export default function Chart({
   names,
@@ -9,9 +10,12 @@ export default function Chart({
   names: string[];
   votes: number[];
 }) {
+  const [width] = useState<number>(
+    window.screen.width > 500 ? 600 : 350
+  );
   return (
     <BarChart
-      colors={[]}
+      colors={["blue"]}
       xAxis={[
         {
           id: "barCategories",
@@ -25,8 +29,9 @@ export default function Chart({
           data: votes,
         },
       ]}
-      width={500}
-      height={300}
+      width={width}
+      height={400}
+      className="dark:text-white"
     />
   );
 }

@@ -29,14 +29,14 @@ const page = ({ params }: { params: { subCategory: string } }) => {
     }
   }, [getStats.data]);
   return (
-    <div className="w-full flex flex-col items-center mt-10">
+    <div className="w-full flex flex-col items-center mt-10 overflow-x-clip">
       {itemData.names.length ? (
         <div className="text-center">
           <h1 className="text-5xl font-bold mb-10">
             {subCategory.split(" ")[0]}
           </h1>
           <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
-            <div className="">
+            <div className="bg-white rounded-md">
               <Chart {...itemData} />
             </div>
             <div className="flex flex-col gap-2 items-center justify-center">

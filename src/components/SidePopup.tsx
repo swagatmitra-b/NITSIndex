@@ -21,11 +21,11 @@ const SidePopup = () => {
           <AlignLeft />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-1/2">
+      <SheetContent side="left" className="w-2/3">
         <SheetHeader className="mt-4">
           <SheetTitle>Categories</SheetTitle>
         </SheetHeader>
-        <div className="flex flex-col items-center gap-4 py-4">
+        <div className="flex flex-col items-center justify-center gap-4 py-4 h-full">
           {categories.isFetched &&
             categories.data
               ?.sort((a, b) => a.id - b.id)
