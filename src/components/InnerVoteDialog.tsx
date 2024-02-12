@@ -15,11 +15,11 @@ import { subCategoryType } from "@/lib/utils";
 const InnerVoteDialog = ({
   subCategory,
   disabled,
-  category
+  category,
 }: {
   subCategory: subCategoryType;
   disabled: boolean;
-  category: string
+  category: string;
 }) => {
   const items = trpc.getItems.useQuery({ subCategoryId: subCategory.id });
   return (
@@ -31,7 +31,7 @@ const InnerVoteDialog = ({
       </DialogTrigger>
       <DialogContent className="">
         <div className="flex items-center space-x-2">
-          <div className="flex-col">
+          <div className="flex-col w-full">
             <VoteForm
               items={items.data as Omit<Item, "count">[]}
               subCategory={subCategory}

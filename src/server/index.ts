@@ -116,6 +116,9 @@ export const appRouter = router({
       where: {
         subCategoryId: input.subCategoryId,
       },
+      orderBy: {
+        votes: "desc"
+      },
       take: 10,
     });
     const topFive = await prisma.item.findMany({
@@ -215,7 +218,7 @@ export const appRouter = router({
       });
       return "Feedback sent!";
     }),
-  getTeam: publicProcedure.query(async ({ input }) => {
+  getTeam: publicProcedure.query(async () => {
     const members = await prisma.team.findMany();
     return members;
   }),

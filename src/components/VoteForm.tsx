@@ -63,7 +63,10 @@ export const VoteForm = ({
 
   return (
     <Form {...useForm()}>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full space-y-6 overflow-y-auto"
+      >
         <FormField
           control={control}
           name="value"

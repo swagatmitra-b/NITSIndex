@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { signOut } from "next-auth/react";
-import TeamDialog from "./ui/TeamDialog";
+import TeamDialog from "./TeamDialog";
 
 const Dropdown = () => {
   return (
@@ -22,7 +22,7 @@ const Dropdown = () => {
           <Settings />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 mr-14">
+      <DropdownMenuContent className="w-56 md:mr-14 mr-2">
           <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
             <Users className="mr-2 h-4 w-4" />
             <TeamDialog />

@@ -6,7 +6,7 @@ import Link from "next/link";
 const SidePanel = () => {
   const categories = trpc.getCategories.useQuery();
   return (
-    <div className="w-1/5 h-screen text-center py-10">
+    <div className="w-1/5 h-screen text-center py-10 hidden md:block">
       <h1 className="text-2xl font-semibold">Categories</h1>
       <div className="flex flex-col h-3/4 justify-evenly">
         {categories.isFetched &&

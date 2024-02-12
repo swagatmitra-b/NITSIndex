@@ -20,7 +20,7 @@ const TeamForm = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset
+    reset,
   } = useForm<teamSchemaType>({
     resolver: zodResolver(teamSchema),
   });
@@ -28,8 +28,8 @@ const TeamForm = () => {
   const submitMutation = trpc.joinTeam.useMutation();
   const joinTeam = async (data: teamSchemaType) => {
     submitMutation.mutate(data);
-    reset()
-  }
+    reset();
+  };
   return (
     <form onSubmit={handleSubmit(joinTeam)}>
       <Card>
@@ -65,7 +65,9 @@ const TeamForm = () => {
             Send
           </Button>
           {submitMutation.data && (
-            <h1 className="text-md text-green-500 mx-5">{submitMutation.data}</h1>
+            <h1 className="text-md text-green-500 mx-5">
+              {submitMutation.data}
+            </h1>
           )}
         </CardFooter>
       </Card>

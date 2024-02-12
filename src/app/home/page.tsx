@@ -30,7 +30,7 @@ const page = () => {
   }) => {
     if (!completed)
       return (
-        <h2 className="text-xl my-2" suppressHydrationWarning={true}>
+        <h2 className="text-xl my-2 px-2 text-center" suppressHydrationWarning={true}>
           Voting starts in {days} day{days != 1 ? "s" : ""} {hours} hour
           {hours != 1 ? "s" : ""} {minutes} minute
           {minutes != 1 ? "s" : ""} and {seconds} second
@@ -39,7 +39,7 @@ const page = () => {
       );
   };
   return (
-    <div className="flex flex-col justify-center items-center w-full ">
+    <div className="flex flex-col justify-center items-center w-full h-screen">
       <h1 className="text-3xl font-semibold">Hello {session?.user?.name}</h1>
       {isVotingOpen ? (
         <div className="text-center my-2">

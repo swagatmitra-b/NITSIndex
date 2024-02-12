@@ -23,7 +23,7 @@ const page = ({ params }: { params: { category: string } }) => {
     }
   }, [subs.data]);
   return (
-    <div className="grid grid-cols-3 gap-10 p-20 w-full">
+    <div className="flex flex-col items-center md:grid grid-cols-3 gap-10 p-20 w-full">
       {subs.isFetched &&
         cardData.subCategory.map((subCat, i) => (
           <SubCategoryCard

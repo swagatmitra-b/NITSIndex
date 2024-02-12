@@ -33,11 +33,13 @@ const page = ({ params }: { params: { subCategory: string } }) => {
       {itemData.names.length ? (
         <div className="text-center">
           <h1 className="text-5xl font-bold mb-10">
-            {subCategory}
+            {subCategory.split(" ")[0]}
           </h1>
-          <div className="flex flex-col md:flex-row gap-5">
-            <Chart {...itemData} />
-            <div className="flex flex-col gap-2 items-center">
+          <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
+            <div className="">
+              <Chart {...itemData} />
+            </div>
+            <div className="flex flex-col gap-2 items-center justify-center">
               {itemData.top.map((item, i) => {
                 if (item.pic)
                   return (

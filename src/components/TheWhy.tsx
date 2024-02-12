@@ -7,14 +7,14 @@ import {
 
 const TheWhy = () => {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
         <AccordionTrigger>What is this?</AccordionTrigger>
         <AccordionContent>
-          NITSIndex is a database that hosts the hottest preferences of students
-          in NIT Silchar. It updates itself through online voting sessions that
-          are conducted every two weeks, as of now. While its current
-          applications may seem trivial, the possibilies are endless.
+          NITSIndex is a database that hosts the hottest preferences of the
+          students of NIT Silchar. It updates itself through online voting
+          sessions that are conducted every two weeks, as of now. While its
+          current applications may seem trivial, the possibilies are endless.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">

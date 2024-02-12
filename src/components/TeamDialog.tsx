@@ -3,13 +3,9 @@
 import { trpc } from "@/trpc_client/client";
 import {
   Dialog,
-  DialogFooter,
   DialogTrigger,
   DialogContent,
-  DialogClose,
 } from "@/components/ui/dialog";
-import { Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const TeamDialog = () => {
   const team = trpc.getTeam.useQuery();

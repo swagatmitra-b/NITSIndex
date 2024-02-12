@@ -9,12 +9,14 @@ export default async function Home() {
     <div className="">
       <NavBarOuter />
       <main className="flex min-h-screen flex-col items-center justify-between">
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <div className="my-14 text-center">
             <h1 className="text-4xl font-semibold">NITSIndex</h1>
             <p className="text-lg">A popularity index for NIT Silchar</p>
           </div>
-          <TheWhy />
+          <div className="px-10">
+            <TheWhy />
+          </div>
         </div>
       </main>
     </div>

@@ -5,7 +5,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -49,7 +48,6 @@ const VoteDialog = () => {
                 <div className="flex flex-col gap-2 my-4" key={cat.id}>
                   <DialogHeader>
                     <DialogTitle className="capitalize">{cat.name}</DialogTitle>
-                    <DialogDescription></DialogDescription>
                   </DialogHeader>
                   <div className="grid grid-cols-3 w-full gap-2">
                     {voteData.subCategories.map((subCat) => {

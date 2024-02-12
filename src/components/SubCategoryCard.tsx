@@ -38,7 +38,7 @@ const SubCategoryCard = ({
   return (
     <Link href={`/home/${category}/${subCategory}%20${subCategoryId}`}>
       <div
-        className="rounded-lg relative w-[350px] border border-black text-center
+        className="rounded-lg relative w-[330px] md:w-[350px] border border-black text-center
          h-[270px] duration-300 ease-in"
         onMouseEnter={() => setBlur(true)}
         onMouseLeave={() => setBlur(false)}

@@ -21,9 +21,9 @@ const Contribute = () => {
   const sendFeedBack = () => {
     fbMutation.mutate({ feedBack, email: session?.user?.email as string });
   };
-  
+
   return (
-    <Tabs defaultValue="feedback" className="w-1/2">
+    <Tabs defaultValue="feedback" className="md:w-1/2 w-11/12">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="feedback">Feedback</TabsTrigger>
         <TabsTrigger value="team">Join the Team</TabsTrigger>
@@ -49,7 +49,7 @@ const Contribute = () => {
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="team">
+      <TabsContent value="team" className="">
         <TeamForm />
       </TabsContent>
     </Tabs>
