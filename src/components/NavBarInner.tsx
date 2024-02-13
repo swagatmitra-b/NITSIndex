@@ -13,6 +13,7 @@ const NavBar = () => {
         <ThemeButton />
       </div>
       <div className="flex gap-2">
+        <h1 className="hidden md:block text-4xl font-semibold mr-2">NITSIndex</h1>
         <Link href="/home">
           <Button variant="outline" className="p-2 dark:bg-slate-950">
             <Home />

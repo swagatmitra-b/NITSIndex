@@ -38,7 +38,9 @@ const VoteDialog = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Vote now</Button>
       </DialogTrigger>
-      <DialogContent className="h-5/6 overflow-y-scroll">
+      <DialogContent
+        className={`${all.isPending ? "" : "h-5/6"} overflow-y-auto`}
+      >
         <div className="flex-col items-center">
           {all.isPending ? (
             <h1 className="text-black">Loading...</h1>

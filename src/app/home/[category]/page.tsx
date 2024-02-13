@@ -5,6 +5,7 @@ import SubCategoryCard from "@/components/SubCategoryCard";
 import { useState, useEffect } from "react";
 import { type subCategoryType, type Item } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SkeletonCard } from "@/components/SkeletonCard";
 
 const page = ({ params }: { params: { category: string } }) => {
   const [cardData, setCardData] = useState<{
@@ -25,19 +26,15 @@ const page = ({ params }: { params: { category: string } }) => {
   }, [subs.data]);
   return (
     <div className="flex flex-col items-center md:grid grid-cols-3 gap-10 p-20 w-full">
-      {subs.isLoading ? (
-        <Skeleton />
-      ) : (
-        cardData.subCategory.map((subCat, i) => (
-          <SubCategoryCard
-            {...cardData.facePics[i]}
-            key={subCat.id}
-            subCategory={subCat.name}
-            subCategoryId={subCat.id}
-            category={params.category}
-          />
-        ))
-      )}
+      {cardData.subCategory.map((subCat, i) => (
+        <SubCategoryCard
+          {...cardData.facePics[i]}
+          key={subCat.id}
+          subCategory={subCat.name}
+          subCategoryId={subCat.id}
+          category={params.category}
+        />
+      ))}
     </div>
   );
 };
