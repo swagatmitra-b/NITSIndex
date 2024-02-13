@@ -63,7 +63,7 @@ const SubCategoryCard = ({
                 : "text-white"
             } duration-300 ease-in ${roboto700.className}`}
             style={{
-              WebkitTextStroke: blur ? "1px black" : "",
+              WebkitTextStroke: blur || window.screen.width < 500 ? "1px black" : "",
               fontSize: blur ? "3.25rem" : "",
             }}
           >
@@ -72,7 +72,7 @@ const SubCategoryCard = ({
           {sentences.data?.length ? (
             <p
               className={`${
-                blur ? "opacity-1" : "opacity-0"
+                blur || window.screen.width < 500 ? "opacity-1" : "opacity-0"
               } duration-300 ease-in ${
                 (category === "academics" || category === "misc") &&
                 theme != "dark"
@@ -81,7 +81,7 @@ const SubCategoryCard = ({
               } mt-2 text-lg ${roboto700.className}`}
               style={{
                 WebkitTextStroke:
-                  blur && category !== "academics" ? "0.8px black" : "",
+                  blur && category !== "academics" || window.screen.width < 500 ? "0.8px black" : "",
               }}
             >
               {getSentence()}
