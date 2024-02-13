@@ -43,7 +43,7 @@ const VoteDialog = () => {
       >
         <div className="flex-col items-center">
           {all.isPending ? (
-            <h1 className="text-black">Loading...</h1>
+            <h1>Loading...</h1>
           ) : (
             voteData.categories.map((cat) => {
               return (
