@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Login = () => {
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
   const {
     register,
     handleSubmit,
@@ -68,7 +68,11 @@ const Login = () => {
               />
             </div>
           </div>
-          {error && <h1 className="text-sm mt-2 text-red-500">{error}</h1>}
+          {error && (
+            <h1 className="text-sm mt-2 text-red-500">
+              {error.length > 55 ? "Server Error :(" : error}
+            </h1>
+          )}
         </CardContent>
         <CardFooter className="flex justify-between">
           <Link href="/signup">
