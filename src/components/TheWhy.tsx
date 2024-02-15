@@ -44,7 +44,7 @@ const TheWhy = () => {
           YES! Your votes, feedback and suggestions are all crucial for the
           functioning of this database. We encourage you to vote regularly and
           share us your ideas across various categories. To keep us abreast with
-          the latest trends in campus, you can send us your entries for the
+          your ever evolving preferences, you can send us your entries for the
           categories you're interested in for up to 24 hours before the voting
           begins. This database is for you and is nothing without you. To join
           the maintenance team, please login to your account and send us an
