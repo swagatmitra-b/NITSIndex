@@ -4,8 +4,6 @@ import { trpc } from "@/trpc_client/client";
 import SubCategoryCard from "@/components/SubCategoryCard";
 import { useState, useEffect } from "react";
 import { type subCategoryType, type Item } from "@/lib/utils";
-import { Skeleton } from "@/components/ui/skeleton";
-import { SkeletonCard } from "@/components/SkeletonCard";
 
 const page = ({ params }: { params: { category: string } }) => {
   const [cardData, setCardData] = useState<{

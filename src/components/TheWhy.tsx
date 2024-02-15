@@ -34,7 +34,8 @@ const TheWhy = () => {
       <AccordionItem value="item-4">
         <AccordionTrigger>How long is the voting open for?</AccordionTrigger>
         <AccordionContent>
-          Usually 24 hours, but could be longer.
+          Usually 24 hours, but could be longer. Also, please note that the
+          polling data updates real-time.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-5">

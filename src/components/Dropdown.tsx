@@ -23,10 +23,10 @@ const Dropdown = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 md:mr-14 mr-2">
-          <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+          {/* <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
             <Users className="mr-2 h-4 w-4" />
             <TeamDialog />
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
         <Link href="/home/contribute">
           <DropdownMenuItem>
             <GitPullRequestArrow className="mr-2 h-4 w-4" />
