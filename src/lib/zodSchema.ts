@@ -8,8 +8,8 @@ export const rawSchema = z.object({
   scholarId: z.string().regex(/^(1[6-9]|[2-9][0-9])[0-9][1-6][0-1][0-9][0-9]$/),
   password: z
     .string()
-    .min(8, "Password must be at least 8 characters")
-    .max(12, "Password cannot be more than 12 characters"),
+    .min(6, "Password must be at least 6 characters")
+    .max(10, "Password cannot be more than 10 characters"),
   confirm: z.string(),
 });
 
