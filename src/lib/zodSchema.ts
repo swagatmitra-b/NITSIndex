@@ -4,7 +4,7 @@ export const rawSchema = z.object({
   email: z
     .string()
     .email()
-    .regex(/^[a-zA-Z]+_[a-zA-Z]{2}_\d{2}@([a-zA-Z]{2})\.nits\.ac\.in$/),
+    .regex(/^[a-zA-Z]+_[a-zA-Z]{2}_\d{2}@(cse|ece|ei|ee|mech|civil)\.nits\.ac\.in$/),
   scholarId: z.string().regex(/^(1[6-9]|[2-9][0-9])[0-9][1-6][0-1][0-9][0-9]$/),
   password: z
     .string()
