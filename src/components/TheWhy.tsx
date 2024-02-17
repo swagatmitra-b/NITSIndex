@@ -13,7 +13,7 @@ const TheWhy = () => {
         <AccordionContent>
           NITSIndex is a database that hosts the hottest preferences of the
           students of NIT Silchar. It updates itself through online voting
-          sessions that are conducted every two weeks, as of now. While its
+          sessions that are conducted every three weeks, as of now. While its
           current applications may seem trivial, the possibilies are endless.
         </AccordionContent>
       </AccordionItem>
@@ -55,9 +55,8 @@ const TheWhy = () => {
         <AccordionTrigger>What if this never works out?</AccordionTrigger>
         <AccordionContent>
           And it probably won't, at some point. Maintaining a database as it
-          scales is a very tedious task, even with a sizeable team. This is
-          bound to lose traction and fail, like a lot of things that you wish
-          didn't. But we're here for it while it lasts :)
+          scales is a very tedious task, even with a sizeable team. But we're
+          here for it while it lasts :)
         </AccordionContent>
       </AccordionItem>
     </Accordion>
