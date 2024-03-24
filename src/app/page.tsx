@@ -13,6 +13,7 @@ export default async function Home() {
           <div className="my-14 text-center">
             <h1 className="text-4xl font-semibold">NITSIndex</h1>
             <p className="text-lg">A popularity index for NIT Silchar</p>
+            <p>(This project is no longer maintained)</p>
           </div>
           <div className="px-12 md:px-0">
             <TheWhy />
